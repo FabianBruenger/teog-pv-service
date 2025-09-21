@@ -33,5 +33,27 @@ PasswordAuthentication no
 sudo systemctl restart ssh
 ```
 
+Initialize IO and install software
+
+```bash
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install pip
+sudo pip install RPi.GPIO # or sudo apt-get install python3-rpi.gpio
+sudo apt-get install python-serial # sudo apt-get install python3-serial
+wget -P ~/Documents/ https://files.waveshare.com/upload/4/4a/SIM7080G_Cat_M_NB_IoT_HAT_Code.tar.gz
+cd ~/Documents
+tar -xzf SIM7080G_Cat_M_NB_IoT_HAT_Code.tar.gz
+sh ~/Documents/SIM7080G_Cat_M_NB_IoT_HAT_Code/RaspberryPi/pi_gpio_init.sh
+```
+
+Enable PiVPN:
+
+```bash
+curl -L https://install.pivpn.io | bash
+```
+
+
+
+
 
 
