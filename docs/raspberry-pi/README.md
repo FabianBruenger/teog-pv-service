@@ -5,12 +5,13 @@ This includes installing the operating system, setting up networking (VPN connec
 
 ## Hardware requirements
 
-- Raspberry Pi 4 (4GB or 8GB RAM recommended)
-- microSD card (16GB or larger recommended)
+- Raspberry Pi 3 (B/B+)
+- microSD card (32GB)
 - Power supply for the Raspberry Pi
 - Ethernet cable (to connect to the inverter)
-- SIM module for Raspberry Pi https://de.aliexpress.com/item/1005007941611700.html?spm=a2g0o.order_list.order_list_main.5.42f05c5fkFyF7u&gatewayAdapt=glo2deu
-- SIM card with data plan
+- [SIM module](https://de.aliexpress.com/item/1005007941611700.html?spm=a2g0o.order_list.order_list_main.5.42f05c5fkFyF7u&gatewayAdapt=glo2deu) for Raspberry Pi 
+- NB-IoT or CAT-M enabled SIM card by [Onomondo](https://onomondo.com/pricing/?location=&search=Ghana)
+- 
 
 ## Initial setup manually
 
@@ -46,10 +47,13 @@ tar -xzf SIM7080G_Cat_M_NB_IoT_HAT_Code.tar.gz
 sh ~/Documents/SIM7080G_Cat_M_NB_IoT_HAT_Code/RaspberryPi/pi_gpio_init.sh
 ```
 
-Enable PiVPN:
+## Run
+
+To run the AT code and follow the [official doc](https://www.waveshare.com/wiki/SIM7080G_Cat-M/NB-IoT_HAT#HTTP.28S.29_Test)
 
 ```bash
-curl -L https://install.pivpn.io | bash
+gpioset gpiochip0 4=0
+python3 SIM7080G_Cat_M_NB_IoT_HAT_Code/RaspberryPi/python/at/getting_infos.py
 ```
 
 
